@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin
+        uexName="uexCityListView" version="3.0" build="0">
+        <info>build 0:城市列表插件</info>
+    </plugin>
+</uexplugins>

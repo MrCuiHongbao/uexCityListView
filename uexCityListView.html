@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<title>Demo</title>
+<script type="text/javascript">
+    window.uexOnload = function() {
+		uexWidgetOne.onError = function(opCode, errorCode, errorDesc) {
+			alert(errorCode + ":" + errorDesc);
+		}
+        uexCityListView.onItemClick = onItemClick;
+	}
+    function openView(){
+       alert("uexCityListView:openView");
+       var params = "{\"x\":\"320\",\"y\":\"250\",\"w\":\"320\",\"h\":\"568\"}";
+       uexCityListView.open(params);
+    }
+    function setLocalCity(){
+        alert("uexCityListView:setLocalCity");
+        var params = "{\"city\":\"北京\"}";
+        uexCityListView.setLocalCity(params);
+    }
+    function setHotCity(){
+        alert("uexCityListView:setHotCity");
+        var params = "{\"hotCity\":\[\"北京\",\"杭州\",\"上海\"\]}";
+        uexCityListView.setHotCity(params);
+    }
+    function setAllCity(){
+<!--        var params = "{\"B\":\[\"北京\",\"保定市\",\"白城市\"\],\"C\":\[\"长沙市\",\"成都市\",\"承德市\"\]}";-->
+        var params = "{\"city\":\[\"北京\",\"杭州\",\"上海\",\"保定市\"\]}";
+        uexCityListView.setAllCity(params);
+    }
+    function setViewStyle(){
+        alert("uexCityListView:setViewStyle");
+        var params ="{\"searchBar\":{\"placehoderText\":\"请输入城市\",\"bgColor\":\"#4B0082\",\"textColor\":\"#800080\",\"inputBgColor\":\"#FF00FF\"},\"headerView\":{\"bgColor\":\"#00FF00\",\"separatorLineColor\":\"#ff00ff00\",\"sectionHeaderTitleColor\":\"#F5FFFA\",\"itemTextColor\":\"#556B2F\"},\"listView\":{\"bgColor\":\"#ff00ff00\",\"separatorLineColor\":\"#5F9EA0\",\"sectionHeaderTitleColor\":\"#FF00FF\",\"sectionHeaderBgColor\":\"#00FF00\",\"itemTextColor\":\"#5F9EA0\"},\"indexBar\":{\"indexBarTextColor\":\"#5F9EA0\"}}";
+        uexCityListView.setViewStyle(params);
+    }
+    function close1(){
+        alert("uexCityListView.close");
+        uexCityListView.close();
+    }
+    function onItemClick(data){
+<!--        alert("回掉成功");-->
+<!--        alert(data);-->
+    }
+    
+</script>
+</head>
+
+<body>
+	<div class="tit">EUExCityListView</div>
+        <div class="conbor">
+            <div class="consj">
+                <input class="btn" type="button" value="打开" onclick="openView();"/>
+                <input class="btn" type="button" value="关闭" onclick="close1();"/>
+                <input class="btn" type="button" value="设置当前定位城市" onclick="setLocalCity();"/>
+                <input class="btn" type="button" value="设置热门城市" onclick="setHotCity();"/>
+                <input class="btn" type="button" value="设置所有城市" onclick="setAllCity();"/>
+                <input class="btn" type="button" value="设置列表风格" onclick="setViewStyle();"/>
+                <input class="btn" type="button" value="返回" onclick="uexWindow.close();"/>
+            </div>
+        </div>
+</body>
+</html>
